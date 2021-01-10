@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'org.jacis'
+version = '2.0.0'
+
+dependencies {
+    implementation group: 'org.jacis', name: 'jacis', version: '2.0.0-build+'
+    implementation group: 'one.microstream', name: 'storage.embedded', version: '04.00.00-MS-GA'
+    implementation group: 'one.microstream', name: 'storage.embedded.configuration', version: '04.00.00-MS-GA'
+    implementation group: 'one.microstream', name: 'storage.restservice.sparkjava', version: '04.01.00-MS-GA'
+    implementation group: 'one.microstream', name: 'storage.restclient.app', version: '04.01.00-MS-GA'
+}
+
+ext {
+    projectName            = "examples.codesnippets"
+    projectDescription     = "Example Project containing Code Snippets how to use JACIS."
+    projectURL             = "https://github.com/JanWiemer/jacisexampleproject"
+    author                 = "Jan Wiemer"
+    authorId               = "JanWiemer"
+    authorPwd              = System.properties.get("githubPAT") // read access token for GitHub package access.
+    jacisMavenUrl          = "https://maven.pkg.github.com/janwiemer/jacis"
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://repo.microstream.one/repository/maven-public' }
+    maven {
+      credentials {
+        username authorId
+        password authorPwd
+      }
+       url jacisMavenUrl
+    }
+}
