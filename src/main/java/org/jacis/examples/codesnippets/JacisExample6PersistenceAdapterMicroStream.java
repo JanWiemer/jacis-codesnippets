@@ -13,7 +13,7 @@ import org.jacis.plugin.objectadapter.cloning.JacisCloningObjectAdapter;
 import org.jacis.store.JacisStore;
 
 import one.microstream.storage.configuration.Configuration;
-import one.microstream.storage.types.EmbeddedStorageManager;
+import one.microstream.storage.embedded.types.EmbeddedStorageManager;
 
 /**
  * Example 6: MicroStream Persistence Adapter.
