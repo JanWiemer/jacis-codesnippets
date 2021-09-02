@@ -102,5 +102,6 @@ public class JacisExample3ReadOnlyApi {
         }
       });
     });
+    System.out.println("get readonly without tx: " + store.getReadOnly("account1"));
   }
 }
