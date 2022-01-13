@@ -4,14 +4,15 @@ plugins {
 }
 
 group = 'org.jacis'
-version = '2.0.0'
-
+version = '2.0.13'
+ext {
+  version_microstream = '06.01.00-MS-GA'
+}
 dependencies {
-    implementation group: 'org.jacis', name: 'jacis', version: '2.0.7'
-    implementation group: 'one.microstream', name: 'microstream-storage-embedded', version: '05.00.02-MS-GA'
-    implementation group: 'one.microstream', name: 'microstream-storage-embedded-configuration', version: '05.00.02-MS-GA'
-    implementation group: 'one.microstream', name: 'microstream-storage-restservice-sparkjava', version: '05.00.02-MS-GA'
-    implementation group: 'one.microstream', name: 'microstream-storage-restclient-app', version: '05.00.02-MS-GA'
+    implementation group: 'org.jacis', name: 'jacis', version: '2.0.13'
+    implementation group: 'one.microstream',   name: 'microstream-storage-embedded', version: version_microstream
+    implementation group: 'one.microstream',   name: 'microstream-storage-embedded', version: version_microstream
+    implementation group: 'one.microstream',   name: 'microstream-storage-embedded-configuration', version: version_microstream
 }
 
 ext {
