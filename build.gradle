@@ -4,12 +4,12 @@ plugins {
 }
 
 group = 'org.jacis'
-version = '2.0.13'
+version = '2.0.22'
 ext {
   version_microstream = '06.01.00-MS-GA'
 }
 dependencies {
-    implementation group: 'org.jacis', name: 'jacis', version: '2.0.13'
+    implementation group: 'org.jacis', name: 'jacis', version: '2.0.22'
     implementation group: 'one.microstream',   name: 'microstream-storage-embedded', version: version_microstream
     implementation group: 'one.microstream',   name: 'microstream-storage-embedded', version: version_microstream
     implementation group: 'one.microstream',   name: 'microstream-storage-embedded-configuration', version: version_microstream

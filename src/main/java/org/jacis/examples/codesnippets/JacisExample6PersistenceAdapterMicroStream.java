@@ -12,7 +12,8 @@ import org.jacis.extension.persistence.microstream.MicrostreamStorage;
 import org.jacis.plugin.objectadapter.cloning.JacisCloningObjectAdapter;
 import org.jacis.store.JacisStore;
 
-import one.microstream.storage.configuration.Configuration;
+import one.microstream.storage.embedded.configuration.types.EmbeddedStorageConfiguration;
+import one.microstream.storage.embedded.configuration.types.EmbeddedStorageConfigurationBuilder;
 import one.microstream.storage.embedded.types.EmbeddedStorageManager;
 
 /**
@@ -67,15 +68,15 @@ public class JacisExample6PersistenceAdapterMicroStream {
   }
 
   protected static EmbeddedStorageManager createMicroStreamStorageManager() {
-    EmbeddedStorageManager storageManager = Configuration.LoadIni("microstream.ini") //
+    EmbeddedStorageManager storageManager = EmbeddedStorageConfiguration.load("microstream.ini") //
         .createEmbeddedStorageFoundation() //
         .createEmbeddedStorageManager();
     return storageManager;
   }
 
   protected static EmbeddedStorageManager createMicroStreamStorageManagerHardCoded() {
-    EmbeddedStorageManager storageManager = Configuration.Default() //
-        .setBaseDirectory("var/data-dir") //
+    EmbeddedStorageManager storageManager = EmbeddedStorageConfigurationBuilder.New() //
+        .setStorageDirectory("var/data-dir") //
         .setBackupDirectory("var/backup-dir") //
         .createEmbeddedStorageFoundation() //
         .createEmbeddedStorageManager();
