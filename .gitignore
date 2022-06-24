@@ -18,3 +18,4 @@ junit*.properties
 log
 test-output
 ivysettings-local.xml
+/storage/
